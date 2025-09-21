@@ -1,0 +1,144 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* --- Root Theme Variables --- */
+:root {
+  --background: 240 10% 96.1%;
+  /* #F5F5F7 */
+  --foreground: 240 10% 3.9%;
+  /* #0A0A0A */
+  --card: 0 0% 100%;
+  /* #FFFFFF */
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 142.1 76.2% 36.3%;
+  /* #34C759 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 4.8% 95.9%;
+  /* #F0F0F0 */
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 142.1 76.2% 36.3%;
+  --radius: 0.5rem;
+
+  --forest-green: #34C759;
+  --forest-green-light: #30B050;
+  --dark-card: #2C2C2C;
+  --dark-card-foreground: #FFFFFF;
+}
+
+/* --- Base Styling --- */
+body {
+  @apply bg-background text-foreground;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Utility Colors --- */
+.forest-green {
+  background-color: var(--forest-green);
+}
+
+.text-forest-green {
+  color: var(--forest-green);
+}
+
+.border-forest-green {
+  border-color: var(--forest-green);
+}
+
+.hover\:bg-forest-green-light:hover {
+  background-color: var(--forest-green-light);
+}
+
+.gradient-forest {
+  background: linear-gradient(135deg, #34C759 0%, #2E8B57 50%, #34C759 100%);
+}
+
+/* --- Cards --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-card-dark {
+  background: rgba(44, 44, 44, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Quiz Options --- */
+.quiz-option-selected {
+  background-color: #eaf8e9 !important;
+  border-color: var(--forest-green) !important;
+  color: var(--foreground) !important;
+}
+
+.quiz-option-selected span {
+  color: var(--foreground) !important;
+}
+
+/* --- Native Select Dropdowns --- */
+select {
+  background-color: #ffffff !important;
+  color: #1B1B1B !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+}
+
+select option {
+  background-color: #ffffff !important;
+  color: #1B1B1B !important;
+}
+
+select option:hover,
+select option:checked {
+  background-color: var(--secondary) !important;
+  color: #000000 !important;
+}
+
+/* --- React-Select Fix (Dropdown Transparency) --- */
+.react-select__menu {
+  background-color: var(--card) !important;
+  color: var(--foreground) !important;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  z-index: 9999 !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.react-select__menu-list {
+  background-color: var(--card) !important;
+}
+
+.react-select__option {
+  background-color: var(--card) !important;
+  color: var(--foreground) !important;
+}
+
+.react-select__option--is-focused {
+  background-color: var(--secondary) !important;
+}
+
+.react-select__option--is-selected {
+  background-color: var(--forest-green) !important;
+  color: #fff !important;
+}
